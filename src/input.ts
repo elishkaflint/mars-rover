@@ -1,5 +1,7 @@
 export type Input = {
-    position: string[]
-    grid: string[]
-    directions: string[]
-}
+    grid: string[];
+    robots: {
+        directions: string[];
+        position: string[];
+    }[];
+};

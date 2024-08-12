@@ -33,6 +33,7 @@ export class Rover {
     }
 
     moveForward(): void {
+        console.log('Moved forward');
         if (this._isLost) {
             return;
         }
@@ -48,27 +49,32 @@ export class Rover {
         } else {
             this._isLost = true;
         }
+        console.log(this.getPosition());
         return;
     }
 
     turnLeft(): void {
+        console.log('Turned left');
         if (this._isLost) {
             return;
         }
 
         this._orientation = Compass.turnLeft(this._orientation);
+        console.log(this.getPosition());
     }
 
     turnRight(): void {
+        console.log('Turned right');
         if (this._isLost) {
             return;
         }
 
         this._orientation = Compass.turnRight(this._orientation);
+        console.log(this.getPosition());
     }
 
     getPosition(): string {
-        const coords = `(${this._x}, ${this._y}, ${this._orientation})`
-        return this._isLost ? coords + " LOST" : coords;
+        const coords = `(${this._x}, ${this._y}, ${this._orientation})`;
+        return this._isLost ? coords + ' LOST' : coords;
     }
 }
