@@ -66,4 +66,9 @@ export class Rover {
 
         this._orientation = Compass.turnRight(this._orientation);
     }
+
+    getPosition(): string {
+        const coords = `(${this._x}, ${this._y}, ${this._orientation})`
+        return this._isLost ? coords + " LOST" : coords;
+    }
 }

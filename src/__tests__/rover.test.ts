@@ -207,4 +207,22 @@ describe('Rover unit tests', () => {
             });
         });
     });
+
+    describe("Get position", () => {
+        test('When not lost', () => {
+            const rover: Rover = new Rover(0, 1, 'W', grid);
+
+            const position = rover.getPosition();
+
+            expect(position).toBe("(0, 1, W)")
+        })
+        test('When lost', () => {
+            const rover: Rover = new Rover(0, 0, 'W', grid);
+            rover.moveForward()
+
+            const position = rover.getPosition();
+
+            expect(position).toBe("(0, 0, W) LOST")
+        })
+    })
 });
