@@ -85,5 +85,23 @@ describe('Rover', () => {
                 });
             });
         });
+
+        describe('When rover starts in middle pointing east', () => {
+            describe('Moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'E', grid);
+
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 2,
+                        y: 1,
+                        orientation: 'E',
+                    });
+                });
+            });
+        });
     });
 });
