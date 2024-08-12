@@ -1,6 +1,5 @@
 import { Grid } from '../grid';
 import { Robot } from '../robot';
-import { assertExpected } from './utils';
 
 describe('Robot unit tests', () => {
     const grid = new Grid(3, 3);
@@ -226,3 +225,18 @@ describe('Robot unit tests', () => {
         });
     });
 });
+
+export function assertExpected(
+    robot: Robot,
+    expected: {
+        isLost: boolean;
+        x: number;
+        y: number;
+        orientation: string;
+    }
+) {
+    expect(robot.isLost).toBe(expected.isLost);
+    expect(robot.x).toBe(expected.x);
+    expect(robot.y).toBe(expected.y);
+    expect(robot.orientation).toBe(expected.orientation);
+}
