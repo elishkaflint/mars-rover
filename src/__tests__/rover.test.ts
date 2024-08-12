@@ -87,6 +87,22 @@ describe('Rover', () => {
                     });
                 });
             });
+            describe('Turns left and moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'N', grid);
+
+                    rover.turnLeft();
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 0,
+                        y: 1,
+                        orientation: 'W',
+                    });
+                });
+            });
         });
 
         describe('When rover starts in middle pointing east', () => {
@@ -102,6 +118,22 @@ describe('Rover', () => {
                         x: 2,
                         y: 1,
                         orientation: 'E',
+                    });
+                });
+            });
+            describe('Turns left and moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'E', grid);
+
+                    rover.turnLeft();
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 1,
+                        y: 2,
+                        orientation: 'N',
                     });
                 });
             });
@@ -123,6 +155,22 @@ describe('Rover', () => {
                     });
                 });
             });
+            describe('Turns left and moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'S', grid);
+
+                    rover.turnLeft();
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 2,
+                        y: 1,
+                        orientation: 'E',
+                    });
+                });
+            });
         });
 
         describe('When rover starts in middle pointing west', () => {
@@ -138,6 +186,22 @@ describe('Rover', () => {
                         x: 0,
                         y: 1,
                         orientation: 'W',
+                    });
+                });
+            });
+            describe('Turns left and moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'W', grid);
+
+                    rover.turnLeft();
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 1,
+                        y: 0,
+                        orientation: 'S',
                     });
                 });
             });
