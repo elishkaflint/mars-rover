@@ -1,4 +1,4 @@
-import {Rover} from "../rover";
+import { Rover } from '../rover';
 
 export function assertExpected(
     rover: Rover,

@@ -1,12 +1,10 @@
-import {Grid} from "../grid";
-import {Rover} from "../rover";
-import {assertExpected} from "./utils";
+import { Grid } from '../grid';
+import { Rover } from '../rover';
+import { assertExpected } from './utils';
 
 describe('Rover', () => {
-
     describe('Given 1 x 1 grid', () => {
-
-        const grid: Grid = new Grid(1,1);
+        const grid: Grid = new Grid(1, 1);
 
         describe('When facing north and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
@@ -20,8 +18,8 @@ describe('Rover', () => {
                     y: 0,
                     orientation: 'N',
                 });
-            })
-        })
+            });
+        });
 
         describe('When facing east and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
@@ -35,8 +33,8 @@ describe('Rover', () => {
                     y: 0,
                     orientation: 'E',
                 });
-            })
-        })
+            });
+        });
 
         describe('When facing south and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
@@ -50,8 +48,8 @@ describe('Rover', () => {
                     y: 0,
                     orientation: 'S',
                 });
-            })
-        })
+            });
+        });
 
         describe('When facing west and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
@@ -64,7 +62,7 @@ describe('Rover', () => {
                     y: 0,
                     orientation: 'W',
                 });
-            })
-        })
-    })
-})
+            });
+        });
+    });
+});

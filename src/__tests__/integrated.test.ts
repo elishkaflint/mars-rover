@@ -1,6 +1,6 @@
-import {assertExpected} from "./utils";
-import {Grid} from "../grid";
-import {Rover} from "../rover";
+import { assertExpected } from './utils';
+import { Grid } from '../grid';
+import { Rover } from '../rover';
 
 describe('Integrated tests', () => {
     it('Scenario 1', () => {
