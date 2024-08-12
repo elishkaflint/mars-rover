@@ -1,44 +1,36 @@
-import {Compass} from "../compass";
+import { Compass } from '../compass';
 
 describe('Compass', () => {
     test('Turn left - north to west', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnLeft('N');
+        const newOrientation: string = Compass.turnLeft('N');
         expect(newOrientation).toBe('W');
-    })
+    });
     test('Turn left - east to north', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnLeft('E');
+        const newOrientation: string = Compass.turnLeft('E');
         expect(newOrientation).toBe('N');
-    })
+    });
     test('Turn left - south to east', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnLeft('S');
+        const newOrientation: string = Compass.turnLeft('S');
         expect(newOrientation).toBe('E');
-    })
+    });
     test('Turn left - west to south', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnLeft('W');
+        const newOrientation: string = Compass.turnLeft('W');
         expect(newOrientation).toBe('S');
-    })
+    });
     test('Turn right - north to east', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnRight('N');
+        const newOrientation: string = Compass.turnRight('N');
         expect(newOrientation).toBe('E');
-    })
+    });
     test('Turn right - east to south', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnRight('E');
+        const newOrientation: string = Compass.turnRight('E');
         expect(newOrientation).toBe('S');
-    })
+    });
     test('Turn right - south to west', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnRight('S');
+        const newOrientation: string = Compass.turnRight('S');
         expect(newOrientation).toBe('W');
-    })
+    });
     test('Turn right - west to north', () => {
-        const navigator: Compass = new Compass();
-        const newOrientation: string = navigator.turnRight('W');
+        const newOrientation: string = Compass.turnRight('W');
         expect(newOrientation).toBe('N');
-    })
-})
+    });
+});

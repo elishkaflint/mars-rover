@@ -3,7 +3,6 @@ import { Grid } from '../grid';
 import { Rover } from '../rover';
 
 describe('Rover integrated tests', () => {
-
     test('Scenario 1', () => {
         const grid = new Grid(8, 4);
         const rover = new Rover(2, 3, 'E', grid);

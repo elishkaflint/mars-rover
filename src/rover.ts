@@ -1,4 +1,5 @@
 import { Grid } from './grid';
+import { Compass } from './compass';
 
 export class Rover {
     private _isLost: boolean;
@@ -32,16 +33,13 @@ export class Rover {
     }
 
     moveForward(): void {
-        if(this._isLost) {
-            return
+        if (this._isLost) {
+            return;
         }
 
         if (this._orientation === 'N' && this._y + 1 <= this._grid.rows - 1) {
             this._y++;
-        } else if (
-            this._orientation === 'E' &&
-            this._x + 1 <= this._grid.columns - 1
-        ) {
+        } else if (this._orientation === 'E' && this._x + 1 <= this._grid.columns - 1) {
             this._x++;
         } else if (this._orientation === 'S' && this._y - 1 >= 0) {
             this._y--;
@@ -54,48 +52,18 @@ export class Rover {
     }
 
     turnLeft(): void {
-        if(this._isLost) {
-            return
+        if (this._isLost) {
+            return;
         }
 
-        if (this._orientation === 'N') {
-            this._orientation = 'W';
-            return;
-        }
-        if (this._orientation === 'E') {
-            this._orientation = 'N';
-            return;
-        }
-        if (this._orientation === 'S') {
-            this._orientation = 'E';
-            return;
-        }
-        if (this._orientation === 'W') {
-            this._orientation = 'S';
-            return;
-        }
+        this._orientation = Compass.turnLeft(this._orientation);
     }
 
     turnRight(): void {
-        if(this._isLost) {
-            return
+        if (this._isLost) {
+            return;
         }
 
-        if (this._orientation === 'N') {
-            this._orientation = 'E';
-            return;
-        }
-        if (this._orientation === 'E') {
-            this._orientation = 'S';
-            return;
-        }
-        if (this._orientation === 'S') {
-            this._orientation = 'W';
-            return;
-        }
-        if (this._orientation === 'W') {
-            this._orientation = 'N';
-            return;
-        }
+        this._orientation = Compass.turnRight(this._orientation);
     }
 }

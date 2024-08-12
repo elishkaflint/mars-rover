@@ -3,7 +3,6 @@ import { Rover } from '../rover';
 import { assertExpected } from './utils';
 
 describe('Rover unit tests', () => {
-
     const grid = new Grid(3, 3);
 
     describe('Moves forwards', () => {
@@ -18,7 +17,7 @@ describe('Rover unit tests', () => {
                 y: 2,
                 orientation: 'N',
             });
-        })
+        });
         test('When facing east', () => {
             const rover = new Rover(1, 1, 'E', grid);
 
@@ -30,7 +29,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'E',
             });
-        })
+        });
         test('When facing south', () => {
             const rover = new Rover(1, 1, 'S', grid);
 
@@ -42,7 +41,7 @@ describe('Rover unit tests', () => {
                 y: 0,
                 orientation: 'S',
             });
-        })
+        });
         test('When facing west', () => {
             const rover = new Rover(1, 1, 'W', grid);
 
@@ -54,12 +53,11 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'W',
             });
-        })
-    })
+        });
+    });
 
     describe('Turns left', () => {
         test('When facing north', () => {
-
             const rover = new Rover(1, 1, 'N', grid);
 
             rover.turnLeft();
@@ -70,7 +68,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'W',
             });
-        })
+        });
         test('When facing east', () => {
             const rover = new Rover(1, 1, 'E', grid);
 
@@ -82,7 +80,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'N',
             });
-        })
+        });
         test('When facing south', () => {
             const rover = new Rover(1, 1, 'S', grid);
 
@@ -94,7 +92,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'E',
             });
-        })
+        });
         test('When facing west', () => {
             const rover = new Rover(1, 1, 'W', grid);
 
@@ -106,8 +104,8 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'S',
             });
-        })
-    })
+        });
+    });
 
     describe('Turns right', () => {
         test('When facing north', () => {
@@ -121,7 +119,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'E',
             });
-        })
+        });
         test('When facing east', () => {
             const rover = new Rover(1, 1, 'E', grid);
 
@@ -133,7 +131,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'S',
             });
-        })
+        });
         test('When facing south', () => {
             const rover = new Rover(1, 1, 'S', grid);
 
@@ -145,7 +143,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'W',
             });
-        })
+        });
         test('When facing west', () => {
             const rover = new Rover(1, 1, 'W', grid);
 
@@ -157,8 +155,8 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'N',
             });
-        })
-    })
+        });
+    });
 
     describe('Gets lost', () => {
         test('When facing north', () => {
@@ -172,7 +170,7 @@ describe('Rover unit tests', () => {
                 y: 2,
                 orientation: 'N',
             });
-        })
+        });
         test('When facing east', () => {
             const rover: Rover = new Rover(2, 1, 'E', grid);
 
@@ -184,7 +182,7 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'E',
             });
-        })
+        });
         test('When facing south', () => {
             const rover: Rover = new Rover(1, 0, 'S', grid);
 
@@ -196,7 +194,7 @@ describe('Rover unit tests', () => {
                 y: 0,
                 orientation: 'S',
             });
-        })
+        });
         test('When facing west', () => {
             const rover: Rover = new Rover(0, 1, 'W', grid);
 
@@ -207,6 +205,6 @@ describe('Rover unit tests', () => {
                 y: 1,
                 orientation: 'W',
             });
-        })
-    })
+        });
+    });
 });
