@@ -32,7 +32,11 @@ export class Rover {
     }
 
     moveForward(): void {
-        this._isLost = true;
+        if(this._orientation === 'N' && this._y + 1 <= this._grid.rows - 1) {
+            this._y++;
+        } else {
+            this._isLost = true;
+        }
         return;
     }
 }

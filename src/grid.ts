@@ -1,17 +1,17 @@
 export class Grid {
-    private readonly _x: number;
-    private readonly _y: number;
+    private readonly _rows: number;
+    private readonly _columns: number;
 
     constructor(x: number, y: number) {
-        this._x = x;
-        this._y = y;
+        this._rows = x;
+        this._columns = y;
     }
 
-    get x(): number {
-        return this._x;
+    get rows(): number {
+        return this._rows;
     }
 
-    get y(): number {
-        return this._y;
+    get columns(): number {
+        return this._columns;
     }
 }

@@ -3,7 +3,7 @@ import { Rover } from '../rover';
 import { assertExpected } from './utils';
 
 describe('Rover', () => {
-    describe('Given 1 x 1 grid', () => {
+    describe('Given a 1 x 1 grid', () => {
         const grid: Grid = new Grid(1, 1);
 
         describe('When facing north and moves forwards', () => {
@@ -61,6 +61,27 @@ describe('Rover', () => {
                     x: 0,
                     y: 0,
                     orientation: 'W',
+                });
+            });
+        });
+    });
+
+    describe('Given a 3 x 3 grid', () => {
+
+        describe('When rover starts in middle pointing north', () => {
+            describe('Moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'N', grid);
+
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 1,
+                        y: 2,
+                        orientation: 'N',
+                    });
                 });
             });
         });
