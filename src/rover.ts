@@ -36,6 +36,8 @@ export class Rover {
             this._y++;
         } else if (this._orientation === 'E' && this._x + 1 <= this._grid.columns - 1) {
             this._x++;
+        } else if (this._orientation === 'S' && this._y - 1 >= 0) {
+            this._y--;
         } else {
             this._isLost = true;
         }
