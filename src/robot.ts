@@ -33,7 +33,6 @@ export class Robot {
     }
 
     moveForward(): void {
-        console.log('Moved forward');
         if (this._isLost) {
             return;
         }
@@ -49,28 +48,23 @@ export class Robot {
         } else {
             this._isLost = true;
         }
-        console.log(this.getPosition());
         return;
     }
 
     turnLeft(): void {
-        console.log('Turned left');
         if (this._isLost) {
             return;
         }
 
         this._orientation = Compass.turnLeft(this._orientation);
-        console.log(this.getPosition());
     }
 
     turnRight(): void {
-        console.log('Turned right');
         if (this._isLost) {
             return;
         }
 
         this._orientation = Compass.turnRight(this._orientation);
-        console.log(this.getPosition());
     }
 
     getPosition(): string {
