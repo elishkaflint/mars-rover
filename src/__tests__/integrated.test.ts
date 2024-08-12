@@ -4,7 +4,7 @@ import { Robot } from '../robot';
 
 describe('Robot integrated tests', () => {
     test('Scenario 1', () => {
-        const grid = new Grid(8, 4);
+        const grid = new Grid(4, 8);
         const robot = new Robot(2, 3, 'E', grid);
 
         robot.turnLeft();
@@ -22,7 +22,7 @@ describe('Robot integrated tests', () => {
     });
 
     test('Scenario 2', () => {
-        const grid = new Grid(8, 4);
+        const grid = new Grid(4, 8);
         const robot = new Robot(0, 2, 'N', grid);
 
         robot.moveForward();
@@ -42,7 +42,7 @@ describe('Robot integrated tests', () => {
     });
 
     test('Scenario 3', () => {
-        const grid = new Grid(8, 4);
+        const grid = new Grid(4, 8);
         const robot = new Robot(2, 3, 'N', grid);
 
         robot.moveForward();
@@ -60,7 +60,7 @@ describe('Robot integrated tests', () => {
     });
 
     test('Scenario 4', () => {
-        const grid = new Grid(8, 4);
+        const grid = new Grid(4, 8);
         const robot = new Robot(1, 0, 'S', grid);
 
         robot.moveForward();

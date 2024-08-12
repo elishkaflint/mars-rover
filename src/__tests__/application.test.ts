@@ -4,7 +4,7 @@ import { Application } from '../application';
 describe('Application', () => {
     test('Runs all scenarios correctly', () => {
         const input: Input = {
-            grid: ['8', '4'],
+            grid: ['4', '8'],
             robotDetails: [
                 {
                     position: ['2', '3', 'E'],
