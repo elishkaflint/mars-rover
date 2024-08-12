@@ -31,6 +31,19 @@ describe('Rover', () => {
                 orientation: 'W',
             });
         });
+        test('Turns right', () => {
+            const grid = new Grid(3, 3);
+            const rover = new Rover(1, 1, 'N', grid);
+
+            rover.turnRight();
+
+            assertExpected(rover, {
+                isLost: false,
+                x: 1,
+                y: 1,
+                orientation: 'E',
+            });
+        });
         test('Gets lost', () => {
             const grid: Grid = new Grid(3, 3);
             const rover: Rover = new Rover(1, 2, 'N', grid);
@@ -71,6 +84,19 @@ describe('Rover', () => {
                 x: 1,
                 y: 1,
                 orientation: 'N',
+            });
+        });
+        test('Turns right', () => {
+            const grid = new Grid(3, 3);
+            const rover = new Rover(1, 1, 'E', grid);
+
+            rover.turnRight();
+
+            assertExpected(rover, {
+                isLost: false,
+                x: 1,
+                y: 1,
+                orientation: 'S',
             });
         });
         test('Gets lost', () => {
@@ -115,6 +141,19 @@ describe('Rover', () => {
                 orientation: 'E',
             });
         });
+        test('Turns right', () => {
+            const grid = new Grid(3, 3);
+            const rover = new Rover(1, 1, 'S', grid);
+
+            rover.turnRight();
+
+            assertExpected(rover, {
+                isLost: false,
+                x: 1,
+                y: 1,
+                orientation: 'W',
+            });
+        });
         test('Gets lost', () => {
             const grid: Grid = new Grid(3, 3);
             const rover: Rover = new Rover(1, 0, 'S', grid);
@@ -155,6 +194,19 @@ describe('Rover', () => {
                 x: 1,
                 y: 1,
                 orientation: 'S',
+            });
+        });
+        test('Turns right', () => {
+            const grid = new Grid(3, 3);
+            const rover = new Rover(1, 1, 'W', grid);
+
+            rover.turnRight();
+
+            assertExpected(rover, {
+                isLost: false,
+                x: 1,
+                y: 1,
+                orientation: 'N',
             });
         });
         test('Gets lost', () => {

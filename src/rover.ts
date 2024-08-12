@@ -67,4 +67,23 @@ export class Rover {
             return;
         }
     }
+
+    turnRight(): void {
+        if (this._orientation === 'N') {
+            this._orientation = 'E';
+            return;
+        }
+        if (this._orientation === 'E') {
+            this._orientation = 'S';
+            return;
+        }
+        if (this._orientation === 'S') {
+            this._orientation = 'W';
+            return;
+        }
+        if (this._orientation === 'W') {
+            this._orientation = 'N';
+            return;
+        }
+    }
 }
