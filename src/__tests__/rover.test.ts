@@ -4,10 +4,10 @@ import { assertExpected } from './utils';
 
 describe('Rover', () => {
     describe('Given a 1 x 1 grid', () => {
-        const grid: Grid = new Grid(1, 1);
 
         describe('When facing north and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
+                const grid: Grid = new Grid(1, 1);
                 const rover: Rover = new Rover(0, 0, 'N', grid);
 
                 rover.moveForward();
@@ -23,6 +23,7 @@ describe('Rover', () => {
 
         describe('When facing east and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
+                const grid: Grid = new Grid(1, 1);
                 const rover: Rover = new Rover(0, 0, 'E', grid);
 
                 rover.moveForward();
@@ -38,6 +39,7 @@ describe('Rover', () => {
 
         describe('When facing south and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
+                const grid: Grid = new Grid(1, 1);
                 const rover: Rover = new Rover(0, 0, 'S', grid);
 
                 rover.moveForward();
@@ -53,6 +55,7 @@ describe('Rover', () => {
 
         describe('When facing west and moves forwards', () => {
             it('Becomes lost and returns last position', () => {
+                const grid: Grid = new Grid(1, 1);
                 const rover: Rover = new Rover(0, 0, 'W', grid);
 
                 rover.moveForward();
@@ -117,6 +120,24 @@ describe('Rover', () => {
                         x: 1,
                         y: 0,
                         orientation: 'S',
+                    });
+                });
+            });
+        });
+
+        describe('When rover starts in middle pointing west', () => {
+            describe('Moves forwards', () => {
+                it('Then rover is in correct position', () => {
+                    const grid = new Grid(3, 3);
+                    const rover = new Rover(1, 1, 'W', grid);
+
+                    rover.moveForward();
+
+                    assertExpected(rover, {
+                        isLost: false,
+                        x: 0,
+                        y: 1,
+                        orientation: 'W',
                     });
                 });
             });

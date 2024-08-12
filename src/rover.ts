@@ -38,6 +38,8 @@ export class Rover {
             this._x++;
         } else if (this._orientation === 'S' && this._y - 1 >= 0) {
             this._y--;
+        } else if (this._orientation === 'W' && this._x - 1 >= 0) {
+            this._x--;
         } else {
             this._isLost = true;
         }
