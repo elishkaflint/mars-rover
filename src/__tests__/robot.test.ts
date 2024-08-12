@@ -1,17 +1,17 @@
 import { Grid } from '../grid';
-import { Rover } from '../rover';
+import { Robot } from '../robot';
 import { assertExpected } from './utils';
 
-describe('Rover unit tests', () => {
+describe('Robot unit tests', () => {
     const grid = new Grid(3, 3);
 
     describe('Moves forwards', () => {
         test('When facing north', () => {
-            const rover = new Rover(1, 1, 'N', grid);
+            const robot = new Robot(1, 1, 'N', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 2,
@@ -19,11 +19,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing east', () => {
-            const rover = new Rover(1, 1, 'E', grid);
+            const robot = new Robot(1, 1, 'E', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 2,
                 y: 1,
@@ -31,11 +31,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing south', () => {
-            const rover = new Rover(1, 1, 'S', grid);
+            const robot = new Robot(1, 1, 'S', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 0,
@@ -43,11 +43,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing west', () => {
-            const rover = new Rover(1, 1, 'W', grid);
+            const robot = new Robot(1, 1, 'W', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 0,
                 y: 1,
@@ -58,11 +58,11 @@ describe('Rover unit tests', () => {
 
     describe('Turns left', () => {
         test('When facing north', () => {
-            const rover = new Rover(1, 1, 'N', grid);
+            const robot = new Robot(1, 1, 'N', grid);
 
-            rover.turnLeft();
+            robot.turnLeft();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -70,11 +70,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing east', () => {
-            const rover = new Rover(1, 1, 'E', grid);
+            const robot = new Robot(1, 1, 'E', grid);
 
-            rover.turnLeft();
+            robot.turnLeft();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -82,11 +82,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing south', () => {
-            const rover = new Rover(1, 1, 'S', grid);
+            const robot = new Robot(1, 1, 'S', grid);
 
-            rover.turnLeft();
+            robot.turnLeft();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -94,11 +94,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing west', () => {
-            const rover = new Rover(1, 1, 'W', grid);
+            const robot = new Robot(1, 1, 'W', grid);
 
-            rover.turnLeft();
+            robot.turnLeft();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -109,11 +109,11 @@ describe('Rover unit tests', () => {
 
     describe('Turns right', () => {
         test('When facing north', () => {
-            const rover = new Rover(1, 1, 'N', grid);
+            const robot = new Robot(1, 1, 'N', grid);
 
-            rover.turnRight();
+            robot.turnRight();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -121,11 +121,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing east', () => {
-            const rover = new Rover(1, 1, 'E', grid);
+            const robot = new Robot(1, 1, 'E', grid);
 
-            rover.turnRight();
+            robot.turnRight();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -133,11 +133,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing south', () => {
-            const rover = new Rover(1, 1, 'S', grid);
+            const robot = new Robot(1, 1, 'S', grid);
 
-            rover.turnRight();
+            robot.turnRight();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -145,11 +145,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing west', () => {
-            const rover = new Rover(1, 1, 'W', grid);
+            const robot = new Robot(1, 1, 'W', grid);
 
-            rover.turnRight();
+            robot.turnRight();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: false,
                 x: 1,
                 y: 1,
@@ -160,11 +160,11 @@ describe('Rover unit tests', () => {
 
     describe('Gets lost', () => {
         test('When facing north', () => {
-            const rover: Rover = new Rover(1, 2, 'N', grid);
+            const robot: Robot = new Robot(1, 2, 'N', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: true,
                 x: 1,
                 y: 2,
@@ -172,11 +172,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing east', () => {
-            const rover: Rover = new Rover(2, 1, 'E', grid);
+            const robot: Robot = new Robot(2, 1, 'E', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: true,
                 x: 2,
                 y: 1,
@@ -184,11 +184,11 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing south', () => {
-            const rover: Rover = new Rover(1, 0, 'S', grid);
+            const robot: Robot = new Robot(1, 0, 'S', grid);
 
-            rover.moveForward();
+            robot.moveForward();
 
-            assertExpected(rover, {
+            assertExpected(robot, {
                 isLost: true,
                 x: 1,
                 y: 0,
@@ -196,10 +196,10 @@ describe('Rover unit tests', () => {
             });
         });
         test('When facing west', () => {
-            const rover: Rover = new Rover(0, 1, 'W', grid);
+            const robot: Robot = new Robot(0, 1, 'W', grid);
 
-            rover.moveForward();
-            assertExpected(rover, {
+            robot.moveForward();
+            assertExpected(robot, {
                 isLost: true,
                 x: 0,
                 y: 1,
@@ -210,17 +210,17 @@ describe('Rover unit tests', () => {
 
     describe('Get position', () => {
         test('When not lost', () => {
-            const rover: Rover = new Rover(0, 1, 'W', grid);
+            const robot: Robot = new Robot(0, 1, 'W', grid);
 
-            const position = rover.getPosition();
+            const position = robot.getPosition();
 
             expect(position).toBe('(0, 1, W)');
         });
         test('When lost', () => {
-            const rover: Rover = new Rover(0, 0, 'W', grid);
-            rover.moveForward();
+            const robot: Robot = new Robot(0, 0, 'W', grid);
+            robot.moveForward();
 
-            const position = rover.getPosition();
+            const position = robot.getPosition();
 
             expect(position).toBe('(0, 0, W) LOST');
         });

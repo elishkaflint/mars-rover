@@ -1,7 +1,7 @@
-import { Rover } from '../rover';
+import { Robot } from '../robot';
 
 export function assertExpected(
-    rover: Rover,
+    robot: Robot,
     expected: {
         isLost: boolean;
         x: number;
@@ -9,8 +9,8 @@ export function assertExpected(
         orientation: string;
     }
 ) {
-    expect(rover.isLost).toBe(expected.isLost);
-    expect(rover.x).toBe(expected.x);
-    expect(rover.y).toBe(expected.y);
-    expect(rover.orientation).toBe(expected.orientation);
+    expect(robot.isLost).toBe(expected.isLost);
+    expect(robot.x).toBe(expected.x);
+    expect(robot.y).toBe(expected.y);
+    expect(robot.orientation).toBe(expected.orientation);
 }

@@ -1,43 +1,43 @@
 import { Grid } from './grid';
-import { Rover } from './rover';
+import { Robot } from './robot';
 import { Input } from './input';
 
-export class Controller {
+export class Application {
     private input: Input;
 
     constructor(input: Input) {
         this.input = input;
     }
 
-    execute(): string {
+    run(): string {
         const result: string[] = [];
 
         const grid: Grid = new Grid(Number(this.input.grid[0]), Number(this.input.grid[1]));
 
-        this.input.robots.forEach((robot) => {
-            const rover: Rover = new Rover(
-                Number(robot.position[0]),
-                Number(robot.position[1]),
-                robot.position[2],
+        this.input.robotDetails.forEach((robotDetails) => {
+            const robot: Robot = new Robot(
+                Number(robotDetails.position[0]),
+                Number(robotDetails.position[1]),
+                robotDetails.position[2],
                 grid
             );
 
-            robot.directions.forEach((instruction) => {
+            robotDetails.instructions.forEach((instruction) => {
                 switch (instruction) {
                     case 'L':
-                        rover.turnLeft();
+                        robot.turnLeft();
                         break;
                     case 'R':
-                        rover.turnRight();
+                        robot.turnRight();
                         break;
                     case 'F':
-                        rover.moveForward();
+                        robot.moveForward();
                         break;
                     default:
                         console.log('Instruction not valid: ' + instruction);
                 }
             });
-            result.push(rover.getPosition());
+            result.push(robot.getPosition());
         });
 
         return result.join('\n');

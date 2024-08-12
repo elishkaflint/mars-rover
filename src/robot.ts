@@ -1,7 +1,7 @@
 import { Grid } from './grid';
 import { Compass } from './compass';
 
-export class Rover {
+export class Robot {
     private _isLost: boolean;
     private _x: number;
     private _y: number;
