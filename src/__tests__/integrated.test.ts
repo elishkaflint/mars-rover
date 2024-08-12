@@ -1,7 +1,11 @@
+import {assertExpected} from "./utils";
+import {Grid} from "../grid";
+import {Rover} from "../rover";
+
 describe('Integrated tests', () => {
     it('Scenario 1', () => {
         const grid = new Grid(8, 4);
-        const rover = new Rover(grid, 2, 3, 'E');
+        const rover = new Rover(2, 3, 'E', grid);
 
         rover.turnLeft();
         rover.moveForward();
@@ -9,9 +13,11 @@ describe('Integrated tests', () => {
         rover.moveForward();
         rover.moveForward();
 
-        expect(rover.isLost).toBe(true);
-        expect(rover.x).toBe(3);
-        expect(rover.y).toBe(4);
-        expect(rover.orientation).toBe('E');
+        assertExpected(rover, {
+            isLost: true,
+            x: 3,
+            y: 4,
+            orientation: 'E',
+        });
     });
 });
