@@ -59,6 +59,7 @@ describe('Rover unit tests', () => {
 
     describe('Turns left', () => {
         test('When facing north', () => {
+
             const rover = new Rover(1, 1, 'N', grid);
 
             rover.turnLeft();
