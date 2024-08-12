@@ -37,6 +37,7 @@ export class Application {
                         console.log('Instruction not valid: ' + instruction);
                 }
             });
+
             result.push(robot.getPosition());
         });
 
