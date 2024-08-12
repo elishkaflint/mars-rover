@@ -2,7 +2,7 @@ import { Grid } from '../grid';
 import { Rover } from '../rover';
 import { assertExpected } from './utils';
 
-describe('Rover', () => {
+describe('Rover unit tests', () => {
 
     describe('When facing north', () => {
         test('Moves forwards', () => {

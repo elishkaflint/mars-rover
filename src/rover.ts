@@ -32,6 +32,10 @@ export class Rover {
     }
 
     moveForward(): void {
+        if(this._isLost) {
+            return
+        }
+
         if (this._orientation === 'N' && this._y + 1 <= this._grid.rows - 1) {
             this._y++;
         } else if (
@@ -50,6 +54,10 @@ export class Rover {
     }
 
     turnLeft(): void {
+        if(this._isLost) {
+            return
+        }
+
         if (this._orientation === 'N') {
             this._orientation = 'W';
             return;
@@ -69,6 +77,10 @@ export class Rover {
     }
 
     turnRight(): void {
+        if(this._isLost) {
+            return
+        }
+
         if (this._orientation === 'N') {
             this._orientation = 'E';
             return;

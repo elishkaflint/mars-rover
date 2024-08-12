@@ -2,9 +2,9 @@ export class Grid {
     private readonly _rows: number;
     private readonly _columns: number;
 
-    constructor(x: number, y: number) {
-        this._rows = x;
-        this._columns = y;
+    constructor(rows: number, columns: number) {
+        this._rows = rows;
+        this._columns = columns;
     }
 
     get rows(): number {
