@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Target ES6 JavaScript
+    "module": "CommonJS",                     // Use CommonJS for module imports/exports
+    "strict": true,                           // Enable strict type-checking options
+    "esModuleInterop": true,                  // Enable interoperability between CommonJS and ES modules
+    "skipLibCheck": true,                     // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistent casing in imports
+    "outDir": "./dist",                       // Output directory for compiled files
+    "rootDir": "./src",                       // Root directory of source files
+    "moduleResolution": "node",               // Use Node.js module resolution
+    "resolveJsonModule": true,                // Allow import of JSON files
+    "allowSyntheticDefaultImports": true      // Allow default imports from modules without default export
+  },
+  "include": ["src"],                         // Include all files in the src directory
+  "exclude": ["node_modules", "dist"]         // Exclude node_modules and dist directories
+}
