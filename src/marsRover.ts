@@ -2,7 +2,7 @@ import { Grid } from './grid';
 import { Robot } from './robot';
 import { Input } from './input';
 
-export class Application {
+export class MarsRover {
     private input: Input;
 
     constructor(input: Input) {

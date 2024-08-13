@@ -1,7 +1,7 @@
 import { Input } from '../input';
-import { Application } from '../application';
+import { MarsRover } from '../marsRover';
 
-describe('Application', () => {
+describe('Mars Rover', () => {
     test('Runs all scenarios correctly', () => {
         const input: Input = {
             grid: ['4', '8'],
@@ -25,9 +25,9 @@ describe('Application', () => {
             ],
         };
 
-        const application: Application = new Application(input);
+        const marsRover: MarsRover = new MarsRover(input);
 
-        const result: string = application.run();
+        const result: string = marsRover.run();
 
         expect(result).toBe(
             [
