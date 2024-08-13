@@ -39,16 +39,20 @@ export class Robot {
 
         if (this._orientation === 'N' && this._y + 1 <= this._grid.rows - 1) {
             this._y++;
+            return
         } else if (this._orientation === 'E' && this._x + 1 <= this._grid.columns - 1) {
             this._x++;
+            return
         } else if (this._orientation === 'S' && this._y - 1 >= 0) {
             this._y--;
+            return
         } else if (this._orientation === 'W' && this._x - 1 >= 0) {
             this._x--;
+            return
         } else {
             this._isLost = true;
+            return
         }
-        return;
     }
 
     turnLeft(): void {
@@ -68,7 +72,6 @@ export class Robot {
     }
 
     getPosition(): string {
-        const coords = `(${this._x}, ${this._y}, ${this._orientation})`;
-        return this._isLost ? coords + ' LOST' : coords;
+        return `(${this._x}, ${this._y}, ${this._orientation})${this._isLost ? ' LOST' : ''}`;
     }
 }
