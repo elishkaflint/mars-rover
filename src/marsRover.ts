@@ -15,6 +15,7 @@ export class MarsRover {
         const grid: Grid = new Grid(Number(this.input.grid[0]), Number(this.input.grid[1]));
 
         this.input.robotDetails.forEach((robotDetails) => {
+
             const robot: Robot = new Robot(
                 Number(robotDetails.position[0]),
                 Number(robotDetails.position[1]),
