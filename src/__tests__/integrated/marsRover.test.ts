@@ -1,5 +1,5 @@
-import { Input } from '../input';
-import { MarsRover } from '../marsRover';
+import { Input } from '../../input';
+import { MarsRover } from '../../marsRover';
 
 describe('Mars Rover', () => {
     test('Runs all scenarios correctly', () => {

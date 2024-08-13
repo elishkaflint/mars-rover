@@ -1,5 +1,5 @@
-import { Grid } from '../grid';
-import { Robot } from '../robot';
+import { Grid } from '../../grid';
+import { Robot } from '../../robot';
 
 describe('Robot unit tests', () => {
     const grid = new Grid(3, 3);
