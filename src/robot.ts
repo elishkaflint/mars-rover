@@ -33,6 +33,7 @@ export class Robot {
     }
 
     moveForward(): void {
+
         if (this._isLost) {
             return;
         }

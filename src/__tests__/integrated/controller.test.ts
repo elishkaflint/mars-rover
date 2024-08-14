@@ -1,7 +1,7 @@
 import { Input } from '../../input';
-import { MarsRover } from '../../marsRover';
+import { Controller } from '../../controller';
 
-describe('Mars Rover', () => {
+describe('Controller', () => {
     test('Runs all scenarios correctly', () => {
         const input: Input = {
             grid: ['4', '8'],
@@ -25,9 +25,9 @@ describe('Mars Rover', () => {
             ],
         };
 
-        const marsRover: MarsRover = new MarsRover(input);
+        const controller: Controller = new Controller(input);
 
-        const result: string = marsRover.run();
+        const result: string = controller.run();
 
         expect(result).toBe(
             [
