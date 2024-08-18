@@ -1,4 +1,4 @@
-import { ConsoleWriter } from '../../consoleWriter';
+import { ConsoleWriter } from '../../src/consoleWriter';
 
 describe('Console writer', () => {
     test('Writes to the console', () => {

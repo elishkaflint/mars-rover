@@ -1,13 +1,13 @@
-import { Controller } from '../../controller';
-import { FileReader } from '../../fileReader';
-import { ConsoleWriter } from '../../consoleWriter';
+import { Controller } from '../../src/controller';
+import { FileReader } from '../../src/fileReader';
+import { ConsoleWriter } from '../../src/consoleWriter';
 
 describe('Controller', () => {
     test('Runs scenarios correctly with text input', () => {
         const consoleSpy = jest.spyOn(console, 'log');
 
         const controller: Controller = new Controller(
-            new FileReader('src/__tests__/integrated/input.txt'),
+            new FileReader('tests/integrated/input.txt'),
             new ConsoleWriter()
         );
 

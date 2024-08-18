@@ -1,8 +1,8 @@
-import { FileReader } from '../../fileReader';
-import { Input } from '../../input';
+import { FileReader } from '../../src/fileReader';
+import { Input } from '../../src/input';
 
 test('File Reader', () => {
-    const fileReader: FileReader = new FileReader('src/__tests__/unit/input.txt');
+    const fileReader: FileReader = new FileReader('tests/unit/input.txt');
 
     const actual: Input = fileReader.readInput();
 

@@ -1,7 +1,7 @@
-import { Input } from '../../input';
-import { Controller } from '../../controller';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { Input } from '../../src/input';
+import { Controller } from '../../src/controller';
+import { Reader } from '../../src/reader';
+import { Writer } from '../../src/writer';
 
 class MockFileReader implements Reader {
     private input: Input;

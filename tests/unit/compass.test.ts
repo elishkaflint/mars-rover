@@ -1,4 +1,4 @@
-import { Compass } from '../../compass';
+import { Compass } from '../../src/compass';
 
 describe('Compass', () => {
     test('Turn left - north to west', () => {
