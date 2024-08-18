@@ -1,31 +1,6 @@
-import { Input } from '../../src/input';
 import { Controller } from '../../src/controller';
-import { Reader } from '../../src/reader';
-import { Writer } from '../../src/writer';
-
-class MockFileReader implements Reader {
-    private input: Input;
-
-    constructor(input: Input) {
-        this.input = input;
-    }
-
-    readInput(): Input {
-        return this.input;
-    }
-}
-
-class MockWriter implements Writer {
-    private _written: string = '';
-
-    writeResult(result: string): void {
-        this._written = result;
-    }
-
-    get written(): string {
-        return this._written;
-    }
-}
+import { MockFileReader } from './mocks/mockFileReader';
+import { MockWriter } from './mocks/mockWriter';
 
 describe('Controller', () => {
     test('Runs scenarios correctly with text input', () => {
