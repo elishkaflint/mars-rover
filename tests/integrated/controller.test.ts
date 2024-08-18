@@ -1,6 +1,6 @@
 import { Controller } from '../../src/controller';
-import { FileReader } from '../../src/fileReader';
-import { ConsoleWriter } from '../../src/consoleWriter';
+import { FileReader } from '../../src/adapters/fileReader';
+import { ConsoleWriter } from '../../src/adapters/consoleWriter';
 
 describe('Controller', () => {
     test('Runs scenarios correctly with text input', () => {

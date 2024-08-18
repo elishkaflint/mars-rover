@@ -1,4 +1,4 @@
-import { Writer } from './writer';
+import { Writer } from '../writer';
 
 export class ConsoleWriter implements Writer {
     writeResult(result: string): void {

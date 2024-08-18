@@ -1,5 +1,5 @@
-import { Reader } from './reader';
-import { buildRobotDetails, Input, RobotDetails } from './input';
+import { Reader } from '../reader';
+import { buildRobotDetails, Input, RobotDetails } from '../input';
 import fs from 'fs';
 
 export class FileReader implements Reader {
