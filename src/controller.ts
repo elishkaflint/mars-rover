@@ -1,20 +1,24 @@
 import { Grid } from './grid';
 import { Robot } from './robot';
 import { Input } from './input';
+import { Reader } from './reader';
+import * as console from 'console';
 
 export class Controller {
-    private input: Input;
+    private reader: Reader;
 
-    constructor(input: Input) {
-        this.input = input;
+    constructor(reader: Reader) {
+        this.reader = reader;
     }
 
     run(): string {
         const result: string[] = [];
 
-        const grid: Grid = new Grid(Number(this.input.grid[0]), Number(this.input.grid[1]));
+        const input: Input = this.reader.readInput();
 
-        this.input.robotDetails.forEach((robotDetails) => {
+        const grid: Grid = new Grid(Number(input.grid[0]), Number(input.grid[1]));
+
+        input.robotDetails.forEach((robotDetails) => {
 
             const robot: Robot = new Robot(
                 Number(robotDetails.position[0]),

@@ -1,31 +1,11 @@
-import { Input } from '../../input';
 import { Controller } from '../../controller';
+import { FileReader } from '../../fileReader';
 
 describe('Controller', () => {
-    test('Runs all scenarios correctly', () => {
-        const input: Input = {
-            grid: ['4', '8'],
-            robotDetails: [
-                {
-                    position: ['2', '3', 'E'],
-                    instructions: ['L', 'F', 'R', 'F', 'F'],
-                },
-                {
-                    position: ['0', '2', 'N'],
-                    instructions: ['F', 'F', 'L', 'F', 'R', 'F', 'F'],
-                },
-                {
-                    position: ['2', '3', 'N'],
-                    instructions: ['F', 'L', 'L', 'F', 'R'],
-                },
-                {
-                    position: ['1', '0', 'S'],
-                    instructions: ['F', 'F', 'R', 'L', 'F'],
-                },
-            ],
-        };
 
-        const controller: Controller = new Controller(input);
+    test('Runs scenarios correctly with text input', () => {
+
+        const controller: Controller = new Controller(new FileReader("src/__tests__/integrated/input.txt"));
 
         const result: string = controller.run();
 
@@ -37,5 +17,6 @@ describe('Controller', () => {
                 '(1, 0, S) LOST',
             ].join('\n')
         );
-    });
+
+    })
 });
