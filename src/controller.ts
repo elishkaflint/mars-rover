@@ -2,16 +2,19 @@ import { Grid } from './grid';
 import { Robot } from './robot';
 import { Input } from './input';
 import { Reader } from './reader';
+import { Writer } from './writer';
 import * as console from 'console';
 
 export class Controller {
     private reader: Reader;
+    private writer: Writer;
 
-    constructor(reader: Reader) {
+    constructor(reader: Reader, writer: Writer) {
         this.reader = reader;
+        this.writer = writer;
     }
 
-    run(): string {
+    run(): void {
         const result: string[] = [];
 
         const input: Input = this.reader.readInput();
@@ -46,6 +49,6 @@ export class Controller {
             result.push(robot.getPosition());
         });
 
-        return result.join('\n');
+        this.writer.writeResult(result.join('\n'));
     }
 }

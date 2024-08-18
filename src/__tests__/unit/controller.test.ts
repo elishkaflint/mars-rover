@@ -1,6 +1,7 @@
 import { Input } from '../../input';
 import { Controller } from '../../controller';
 import { Reader } from '../../reader';
+import { Writer } from '../../writer';
 
 class MockFileReader implements Reader {
     private input: Input;
@@ -12,12 +13,26 @@ class MockFileReader implements Reader {
     readInput(): Input {
         return this.input;
     }
+}
 
+class MockWriter implements Writer {
+
+    private _written: string = '';
+
+    writeResult(result: string): void {
+        this._written = result;
+    }
+
+    get written(): string {
+        return this._written;
+    }
 }
 
 describe('Controller', () => {
 
     test('Runs scenarios correctly with text input', () => {
+
+        const writer: MockWriter = new MockWriter();
 
         const controller: Controller = new Controller(new MockFileReader( {
             grid: ['4', '8'],
@@ -39,18 +54,17 @@ describe('Controller', () => {
                     instructions: ['F', 'F', 'R', 'L', 'F'],
                 },
             ],
-        }));
+        }), writer);
 
-        const result: string = controller.run();
+        controller.run();
 
-        expect(result).toBe(
+        expect(writer.written).toBe(
             [
                 '(3, 4, E) LOST', // in spec this is (4, 4, E) but final move takes robot off grid
                 '(0, 4, W) LOST',
                 '(2, 3, W)',
                 '(1, 0, S) LOST',
             ].join('\n')
-        );
-
+        )
     })
 });
