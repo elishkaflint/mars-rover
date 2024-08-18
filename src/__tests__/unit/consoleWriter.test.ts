@@ -5,8 +5,8 @@ describe('Console writer', () => {
         const consoleSpy = jest.spyOn(console, 'log');
         const consoleWriter: ConsoleWriter = new ConsoleWriter();
 
-        consoleWriter.writeResult("foo");
+        consoleWriter.writeResult('foo');
 
-        expect(consoleSpy).toHaveBeenCalledWith("foo");
-    })
-})
+        expect(consoleSpy).toHaveBeenCalledWith('foo');
+    });
+});

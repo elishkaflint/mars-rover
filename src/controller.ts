@@ -22,7 +22,6 @@ export class Controller {
         const grid: Grid = new Grid(Number(input.grid[0]), Number(input.grid[1]));
 
         input.robotDetails.forEach((robotDetails) => {
-
             const robot: Robot = new Robot(
                 Number(robotDetails.position[0]),
                 Number(robotDetails.position[1]),

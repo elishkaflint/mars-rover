@@ -6,8 +6,8 @@ export type Input = {
 export type RobotDetails = {
     position: string[];
     instructions: string[];
-}
+};
 
 export const buildRobotDetails = (position: string[], instructions: string[]): RobotDetails => {
-    return { position, instructions }
-}
+    return { position, instructions };
+};

@@ -33,26 +33,25 @@ export class Robot {
     }
 
     moveForward(): void {
-
         if (this._isLost) {
             return;
         }
 
         if (this._orientation === 'N' && this._y + 1 <= this._grid.rows - 1) {
             this._y++;
-            return
+            return;
         } else if (this._orientation === 'E' && this._x + 1 <= this._grid.columns - 1) {
             this._x++;
-            return
+            return;
         } else if (this._orientation === 'S' && this._y - 1 >= 0) {
             this._y--;
-            return
+            return;
         } else if (this._orientation === 'W' && this._x - 1 >= 0) {
             this._x--;
-            return
+            return;
         } else {
             this._isLost = true;
-            return
+            return;
         }
     }
 

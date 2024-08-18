@@ -4,5 +4,4 @@ export class ConsoleWriter implements Writer {
     writeResult(result: string): void {
         console.log(result);
     }
-
 }
